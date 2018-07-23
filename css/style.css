@@ -49,7 +49,7 @@ small {
 .profile-circular {
 	width: 200px;
 	height: 200px;
-	background-image: url('../static/avatar.jpg');
+	background-image: url('https://1mateusfreitas.github.io/static/avatar.jpg');
 	background-size: cover;
 	display: block;
 	border-radius: 100px;
