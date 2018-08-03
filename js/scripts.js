@@ -24,7 +24,7 @@ window.onload = function() {
     'Ou me encontrar nesses lugares legais',
     '<a target="_blank" href="https://www.linkedin.com/in/mateusfreitas">linkedin.com/mateusfreitas</a><br><a target="_blank" href="https://github.com/1mateusfreitas">github.com/1mateusfreitas</a><br><a target="_blank" href="https://twitter.com/1mateusfreitas">twitter.com/1mateusfreitas</a><br><a target="_blank" href="https://fb.me/1mateusfreitas">facebook.com/1mateusfreitas</a><br><a target="_blank" href="https://instagram.com/1mateusfreitas">instagram.com/1mateusfreitas</a><br><a target="_blank" href="https://t.me/mateusfreitas">telegram.com/mateusfreitas</a>',
     getCurrentTime(),
-    'Obrigado pela visita 💙'
+    'Obrigado pela visita ❤️'
   ]
 
   var getFontSize = function() {
