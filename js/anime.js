@@ -1,6 +1,6 @@
 /*
  * Anime v0.0.0
- * http://anime-js.com
+ * http://animejs.com
  * Polyvalent yet lightweight Javascript animation library
  
  * Released under the MIT license
