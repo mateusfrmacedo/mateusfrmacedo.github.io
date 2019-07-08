@@ -19,7 +19,7 @@ window.onload = function() {
   var messages = [
     'Oi, tudo bem? 👋👨🏻‍💻',
     'Sou o Mateus',
-    'Gosto de pizza, drones, e animaizinhos 🐶 <br> sou estudante de ciência da computação 🚀',
+    'Gosto de pizza, drones, e matemática 🔭 <br> sou estudante de ciência da computação 🚀',
     'Você pode falar comigo pelo email <br> <a href="mailto: mateus.freitas@me.com">mateus.freitas@me.com</a> <br> e também baixar meu curriculum  <a target="_blank" href="https://www.icloud.com/iclouddrive/0H-QZGJOOmrfvLsqy85TuPHIw#Oi"> aqui</a> 📝😁',
     'Ou me encontrar nesses lugares legais',
     '<a target="_blank" href="https://www.linkedin.com/in/mateusfreitas">linkedin.com/mateusfreitas</a><br><a target="_blank" href="https://github.com/1mateusfreitas">github.com/1mateusfreitas</a><br><a target="_blank" href="https://twitter.com/1mateusfreitas">twitter.com/1mateusfreitas</a><br><a target="_blank" href="https://fb.me/1mateusfreitas">facebook.com/1mateusfreitas</a><br><a target="_blank" href="https://instagram.com/1mateusfreitas">instagram.com/1mateusfreitas</a><br><a target="_blank" href="https://t.me/mateusfreitas">telegram.com/mateusfreitas</a>',
