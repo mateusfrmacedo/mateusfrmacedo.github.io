@@ -1,7 +1,7 @@
 
   # My Personal iMessage Website
   # https://1mateusfreitas.github.io 
-  # www.mateusfreitas.tk
+  # http://bit.ly/mateusfreitas
   
 <div align="center">
  <p>
