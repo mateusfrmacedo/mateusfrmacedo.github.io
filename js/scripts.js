@@ -20,7 +20,7 @@ window.onload = function() {
     'Oi, tudo bem? 👋👨🏻‍💻',
     'Sou o Mateus',
     'Sou formado em ciência da computação <br> Gosto de matemática e tecnologia 🚀',
-    'Você pode falar comigo pelo email <br> <a href="mailto: mateus.freitas@me.com">mateus.freitas@me.com</a> <br> e também baixar meu curriculum  <a target="_blank" href="https://www.icloud.com/iclouddrive/0539FtSuT9RDaBvPxOXqjptQQ"> aqui</a> 📝😁',
+    'Você pode falar comigo pelo email <br> <a href="mailto: mateus.freitas@me.com">mateus.freitas@me.com</a> <br> e também baixar meu curriculum  <a target="_blank" href="https://www.icloud.com/iclouddrive/033elQcCPUDNEQpJC0wrmKezw#CV_Ingles"> aqui</a> 📝😁',
     'Ou me encontrar nesses lugares',
     '<a target="_blank" href="https://www.linkedin.com/in/mateusfreitas">linkedin.com/mateusfreitas</a><br><a target="_blank" href="https://github.com/1mateusfreitas">github.com/1mateusfreitas</a><br><a target="_blank" href="https://twitter.com/mateusfrmacedo">twitter.com/mateusfrmacedo</a><br><a target="_blank" href="https://fb.me/mateusfrmacedo">facebook.com/mateusfrmacedo</a><br><a target="_blank" href="https://instagram.com/mateusfrmacedo">instagram.com/mateusfrmacedo</a><br><a target="_blank" href="https://t.me/mateusfreitas">telegram.com/mateusfreitas</a> <br><a target="_blank" href="https://open.spotify.com/user/314bjaygau3tzsuuww27nedngkpi?si=H2uVZJuSR1euZprnSUyEfA">spotify.com/mateusfreitas</a> <br><a',
     getCurrentTime(),
