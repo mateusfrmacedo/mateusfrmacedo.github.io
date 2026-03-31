@@ -1,53 +1,170 @@
-# MATEUS FREITAS 👋
 
----
+window.onload = function() {
 
-<table>
-  <tr>
-    <td valign="top" width="50%">
-      <h3>🌐 Conecte-se Comigo:</h3>
-      <a href="https://mateusfrmacedo.github.io" target="_blank">
-        <img src="https://img.shields.io/badge/Website-000000?style=for-the-badge&logo=google-chrome&logoColor=white" />
-      </a>
-      <a href="https://www.linkedin.com/in/mateusfreitas" target="_blank">
-        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-      </a>
-      <a href="https://github.com/mateusfrmacedo" target="_blank">
-        <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
-      </a>
-      <a href="https://x.com/mateusfrmacedo" target="_blank">
-        <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" />
-      </a>
-      <a href="https://instagram.com/mateusfrmacedo" target="_blank">
-        <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
-      </a>
-      <a href="https://t.me/mateusfreitas" target="_blank">
-        <img src="https://img.shields.io/badge/Telegram-26A5E7?style=for-the-badge&logo=telegram&logoColor=white" />
-      </a>
-      <a href="https://dribbble.com/mateusfreitas" target="_blank">
-        <img src="https://img.shields.io/badge/Dribbble-EA4C89?style=for-the-badge&logo=dribbble&logoColor=white" />
-      </a>
-      <a href="https://steamcommunity.com/id/mateusfreitas95/" target="_blank">
-        <img src="https://img.shields.io/badge/Steam-000000?style=for-the-badge&logo=steam&logoColor=white" />
-      </a>
-    </td>
-    <td valign="top" width="50%">
-      <img align="right" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDgwYWlwczJjNWk2aGQ0NjZqY2Z4eW0xb2hwY25wYnJoZ2UwMW00ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PjUGKdds3eGzfBzqJB/giphy.gif" width="400" />
-    </td>
-    </td>
-  </tr>
-</table>
+  var messagesEl = document.querySelector('.messages');
+  var typingSpeed = 20;
+  var loadingText = '<b>•</b><b>•</b><b>•</b>';
+  var messageIndex = 0;
 
----
+  var getCurrentTime = function() {
+    var date = new Date();
+    var hours =  date.getHours();
+    var minutes =  date.getMinutes();
+    var current = hours + (minutes * .01);
+    if (current >= 5 && current < 12) return 'Tenha um bom dia';
+    if (current >= 12 && current < 18) return 'Tenha uma boa tarde';
+    if (current >= 18 || current < 5) return 'Tenha uma boa noite';
+  }
 
-### 🏆 Troféus do GitHub
+  var messages = [
+    'Oi, tudo bem? 👋👨🏻‍💻',
+    'Sou o Mateus',
+    'Sou formado em ciência da computação <br> Gosto de matemática e tecnologia 🚀',
+    'Você pode falar comigo pelo email <br> <a href="mailto: mateus.freitas@me.com">mateus.freitas@me.com</a> <br> e também baixar meu curriculum  <a target="_blank"href="https://raw.githubusercontent.com/mateusfrmacedo/mateusfrmacedo.github.io/0662896dca114410e944b007f0b412f41a45830b/Mateus_Freitas_Macedo_CV.pdf"> aqui</a> 📝😁',
+    'Ou me encontrar nesses lugares',
+    '<a target="_blank" href="https://www.linkedin.com/in/mateusfreitas">linkedin.com/mateusfreitas</a><br><a target="_blank" href="https://github.com/mateusfrmacedo">github.com/mateusfrmacedo</a><br><a target="_blank" href="https://x.com/mateusfrmacedo">x.com/mateusfrmacedo</a><br><a target="_blank" href="https://fb.me/mateusfrmacedo">facebook.com/mateusfrmacedo</a><br><a target="_blank" href="https://instagram.com/mateusfrmacedo">instagram.com/mateusfrmacedo</a><br><a target="_blank" href="https://t.me/mateusfreitas">telegram.com/mateusfreitas</a><br><a target="_blank" href="https://dribbble.com/mateusfreitas">dribbble.com/mateusfreitas</a><br><a target="_blank" href="https://open.spotify.com/user/314bjaygau3tzsuuww27nedngkpi?si=H2uVZJuSR1euZprnSUyEfA">spotify.com/mateusfreitas</a> <br><a <br><a target="_blank" href="https://steamcommunity.com/id/mateusfreitas95/">steam.com/mateusfreitas</a>',
+    getCurrentTime(),
+    'Obrigado pela visita ❤️'
+  ]
 
-<p align="left">
-  <img src="https://github-profile-trophy.vercel.app/?username=mateusfrmacedo&theme=dracula&no-bg=true&column=7" />
-</p>
+  var getFontSize = function() {
+    return parseInt(getComputedStyle(document.body).getPropertyValue('font-size'));
+  }
 
----
+  var pxToRem = function(px) {
+    return px / getFontSize() + 'rem';
+  }
 
-<p align="left">
-  <img height="150" src="https://github-readme-stats.vercel.app/api?username=mateusfrmacedo&show_icons=true&theme=transparent&title_color=0077B5&text_color=333&hide_border=true" />
-</p>
+  var createBubbleElements = function(message, position) {
+    var bubbleEl = document.createElement('div');
+    var messageEl = document.createElement('span');
+    var loadingEl = document.createElement('span');
+    bubbleEl.classList.add('bubble');
+    bubbleEl.classList.add('is-loading');
+    bubbleEl.classList.add('cornered');
+    bubbleEl.classList.add(position === 'right' ? 'right' : 'left');
+    messageEl.classList.add('message');
+    loadingEl.classList.add('loading');
+    messageEl.innerHTML = message;
+    loadingEl.innerHTML = loadingText;
+    bubbleEl.appendChild(loadingEl);
+    bubbleEl.appendChild(messageEl);
+    bubbleEl.style.opacity = 0;
+    return {
+      bubble: bubbleEl,
+      message: messageEl,
+      loading: loadingEl
+    }
+  }
+
+  var getDimentions = function(elements) {
+    return dimensions = {
+      loading: {
+        w: '4rem',
+        h: '2.25rem'
+      },
+      bubble: {
+        w: pxToRem(elements.bubble.offsetWidth + 4),
+        h: pxToRem(elements.bubble.offsetHeight)
+      },
+      message: {
+        w: pxToRem(elements.message.offsetWidth + 4),
+        h: pxToRem(elements.message.offsetHeight)
+      }
+    }
+  }
+
+  var sendMessage = function(message, position) {
+    var loadingDuration = (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + 500;
+    var elements = createBubbleElements(message, position);
+    messagesEl.appendChild(elements.bubble);
+    messagesEl.appendChild(document.createElement('br'));
+    var dimensions = getDimentions(elements);
+    elements.bubble.style.width = '0rem';
+    elements.bubble.style.height = dimensions.loading.h;
+    elements.message.style.width = dimensions.message.w;
+    elements.message.style.height = dimensions.message.h;
+    elements.bubble.style.opacity = 1;
+    var bubbleOffset = elements.bubble.offsetTop + elements.bubble.offsetHeight;
+    if (bubbleOffset > messagesEl.offsetHeight) {
+      var scrollMessages = anime({
+        targets: messagesEl,
+        scrollTop: bubbleOffset,
+        duration: 750
+      });
+    }
+    var bubbleSize = anime({
+      targets: elements.bubble,
+      width: ['0rem', dimensions.loading.w],
+      marginTop: ['2.5rem', 0],
+      marginLeft: ['-2.5rem', 0],
+      duration: 800,
+      easing: 'easeOutElastic'
+    });
+    var loadingLoop = anime({
+      targets: elements.bubble,
+      scale: [1.05, .95],
+      duration: 1100,
+      loop: true,
+      direction: 'alternate',
+      easing: 'easeInOutQuad'
+    });
+    var dotsStart = anime({
+      targets: elements.loading,
+      translateX: ['-2rem', '0rem'],
+      scale: [.5, 1],
+      duration: 400,
+      delay: 25,
+      easing: 'easeOutElastic',
+    });
+    var dotsPulse = anime({
+      targets: elements.bubble.querySelectorAll('b'),
+      scale: [1, 1.25],
+      opacity: [.5, 1],
+      duration: 300,
+      loop: true,
+      direction: 'alternate',
+      delay: function(i) {return (i * 100) + 50}
+    });
+    setTimeout(function() {
+      loadingLoop.pause();
+      dotsPulse.restart({
+        opacity: 0,
+        scale: 0,
+        loop: false,
+        direction: 'forwards',
+        update: function(a) {
+          if (a.progress >= 65 && elements.bubble.classList.contains('is-loading')) {
+            elements.bubble.classList.remove('is-loading');
+            anime({
+              targets: elements.message,
+              opacity: [0, 1],
+              duration: 300,
+            });
+          }
+        }
+      });
+      bubbleSize.restart({
+        scale: 1,
+        width: [dimensions.loading.w, dimensions.bubble.w ],
+        height: [dimensions.loading.h, dimensions.bubble.h ],
+        marginTop: 0,
+        marginLeft: 0,
+        begin: function() {
+          if (messageIndex < messages.length) elements.bubble.classList.remove('cornered');
+        }
+      })
+    }, loadingDuration - 50);
+  }
+
+  var sendMessages = function() {
+    var message = messages[messageIndex];
+    if (!message) return;
+    sendMessage(message);
+    ++messageIndex;
+    setTimeout(sendMessages, (message.replace(/<(?:.|\n)*?>/gm, '').length * typingSpeed) + anime.random(900, 1200));
+  }
+
+  sendMessages();
+
+}
